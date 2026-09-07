@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+curso_informatica.db
+*.db-journal
+*.db-wal
+*.db-shm
+relatorio_alunos.csv

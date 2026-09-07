@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Curso de Informática</title>
+    <style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #b6dadb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 16px;
+    }
+
+    .container {
+        background: #ffffff;
+        padding: 28px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 520px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin: 0 auto 22px;
+        line-height: 1.35;
+        width: 100%;
+    }
+    #formTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto 22px;
+        padding: 0;
+        text-align: center;
+        line-height: 1.25;
+    }
+
+    #formTitle .titulo-principal {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    #formTitle .subtitulo {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 6px 0 0;
+    }
+
+    /* Cabeçalho exclusivo do comprovante impresso */
+    .print-header {
+        display: none;
+    }
+
+    .print-header h2,
+    .print-header p {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        color: #555;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="time"],
+    select {
+        width: 100%;
+        min-height: 46px;
+        padding: 11px 12px;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        font-size: 16px;
+        background: #ffffff;
+    }
+
+    input:focus {
+        border-color: #007BFF;
+        outline: 2px solid rgba(0,123,255,.12);
+    }
+    .radio-group {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 8px;
+    }
+
+    .radio-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 58px;
+        padding: 12px 16px;
+        border: 2px solid #d7e2ee;
+        border-radius: 12px;
+        font-weight: 700;
+        color: #334155;
+        background: #f8fafc;
+        cursor: pointer;
+        transition: .2s ease;
+        overflow: hidden;
+    }
+
+    .radio-label input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .radio-label span {
+        position: relative;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .radio-label:hover {
+        transform: translateY(-1px);
+        border-color: #38bdf8;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, .10);
+    }
+
+    /* Turnos */
+    .turno-manha {
+        border-color: #f59e0b;
+        background: linear-gradient(135deg, #fff7ed, #fffbeb);
+    }
+
+    .turno-tarde {
+        border-color: #2563eb;
+        background: linear-gradient(135deg, #eff6ff, #eef2ff);
+    }
+
+    .turno-manha input:checked + span::before,
+    .turno-tarde input:checked + span::before {
+        content: "✓";
+        display: inline-grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 900;
+    }
+
+    .turno-manha:has(input:checked) {
+        color: #fff;
+        border-color: #f59e0b;
+        background: linear-gradient(135deg, #f59e0b, #ea580c);
+        box-shadow: 0 8px 22px rgba(234, 88, 12, .28);
+    }
+
+    .turno-tarde:has(input:checked) {
+        color: #fff;
+        border-color: #2563eb;
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        box-shadow: 0 8px 22px rgba(37, 99, 235, .28);
+    }
+
+    .turno-manha input:checked + span::before {
+        background: rgba(255,255,255,.22);
+    }
+
+    .turno-tarde input:checked + span::before {
+        background: rgba(255,255,255,.22);
+    }
+
+    /* Dias da semana */
+    .dias-opcao {
+        border-color: #cbd5e1;
+        background: #fff;
+    }
+
+    .dias-opcao:has(input:checked) {
+        color: #fff;
+        border-color: #06b6d4;
+        background: linear-gradient(135deg, #0891b2, #2563eb);
+        box-shadow: 0 8px 20px rgba(8, 145, 178, .24);
+    }
+
+    .selecao-indicador {
+        margin-top: 10px;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 9px 12px;
+        border-radius: 10px;
+        background: #0f172a;
+        color: #e2e8f0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .selecao-indicador strong {
+        color: #67e8f9;
+    }
+
+    @media (max-width: 600px) {
+        .radio-group {
+            grid-template-columns: 1fr;
+        }
+
+        .radio-label {
+            min-height: 54px;
+        }
+    }
+
+    @media print {
+
+        body {
+            background-color: #ffffff;
+            padding: 0;
+        }
+
+        .container {
+            box-shadow: none;
+            padding: 0;
+            max-width: 100%;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="time"] {
+            border: none;
+            border-bottom: 1px dashed #000;
+            border-radius: 0;
+            padding: 5px 0;
+            background: transparent;
+        }
+
+        input[type="radio"]:not(:checked),
+        input[type="radio"]:checked {
+            display: none;
+        }
+
+        input[type="radio"]:checked + span {
+            font-weight: bold;
+            border-bottom: 1px dashed #000;
+            padding-bottom: 2px;
+        }
+        .radio-label {
+            background: transparent !important;
+            border-color: transparent !important;
+            box-shadow: none !important;
+            color: #000 !important;
+            transform: none !important;
+        }
+        input[name="dias"]:not(:checked),
+        input[name="dias"]:checked {
+            display: none;
+        }
+
+        input[name="dias"]:checked + span {
+            display: inline;
+            font-weight: bold;
+            border-bottom: 1px dashed #000;
+            padding-bottom: 2px;
+        }
+
+
+        .btn-group, #formTitle, .selecao-indicador {
+            display: none;
+        }
+
+        .print-header {
+            display: block !important;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto 30px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+
+        .print-header h2,
+        .print-header p {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    .print-only-info {
+        display: none;
+    }
+
+    @media print {
+        @page {
+            size: auto;
+            margin: 12mm;
+        }
+
+        html, body {
+            height: auto !important;
+            min-height: 0 !important;
+            overflow: visible !important;
+        }
+
+        body {
+            display: block !important;
+        }
+
+        .container {
+            width: 100% !important;
+            max-width: none !important;
+            min-height: 0 !important;
+            height: auto !important;
+        }
+
+        .print-only-info {
+            display: block !important;
+            margin-top: 12px;
+            padding: 8px 0;
+        }
+    }
+
+    .vagas-box {
+        margin-top: 18px;
+        padding: 16px;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        background: #f8fafc;
+    }
+
+    .vagas-box h3 {
+        margin: 0 0 12px;
+        color: #0f172a;
+        text-align: center;
+    }
+
+    .resumo-vagas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .resumo-vagas div {
+        padding: 10px;
+        border-radius: 10px;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .resumo-vagas strong {
+        display: block;
+        font-size: 20px;
+        color: #0f172a;
+    }
+
+    .lista-vagas {
+        display: grid;
+        gap: 8px;
+        max-height: 330px;
+        overflow-y: auto;
+    }
+
+    .vaga-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        align-items: center;
+        padding: 10px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #fff;
+        font-size: 13px;
+    }
+
+    .vaga-item .restantes {
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .vaga-item.lotada {
+        background: #fef2f2;
+        border-color: #fecaca;
+        color: #991b1b;
+    }
+
+    .vaga-item.manha { border-left: 5px solid #f59e0b; }
+    .vaga-item.tarde { border-left: 5px solid #2563eb; }
+
+    .status-api {
+        margin-top: 10px;
+        min-height: 22px;
+        font-size: 13px;
+        text-align: center;
+        color: #475569;
+    }
+
+    .status-api.ok { color: #166534; font-weight: 700; }
+    .status-api.erro { color: #b91c1c; font-weight: 700; }
+
+    @media (max-width: 600px) {
+        .resumo-vagas { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+        .vagas-box, .status-api { display: none !important; }
+    }
+
+
+    .admin-actions {
+        margin-top: 14px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .admin-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 12px 16px;
+        border-radius: 10px;
+        background: #0f172a;
+        color: #fff;
+    }
+
+    .admin-link:hover {
+        background: #1e293b;
+    }
+
+    @media print {
+        .admin-actions { display: none !important; }
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Cabeçalho oficial que só aparece no papel impresso -->
+    <div class="print-header">
+        <h2>COMPROVANTE DE INSCRIÇÃO</h2>
+        <p>Curso de Informática</p>
+    </div>
+
+    <!-- Título principal da tela -->
+    <h2 id="formTitle">
+            <span class="titulo-principal">Inscrição - Curso de Informática</span>
+            <small class="subtitulo">Curso de Informática</small>
+        </h2>
+    
+    <form id="formInscricao">
+        <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" required placeholder="Digite seu nome">
+        </div>
+        
+        <div class="form-group">
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" required placeholder="00.000.000-0">
+        </div>
+        
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" required placeholder="000.000.000-00">
+        </div>
+        
+        <div class="form-group">
+            <label for="contato">Contato:</label>
+            <input type="tel" id="contato" required placeholder="(00) 00000-0000">
+        </div>
+        
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" required placeholder="Rua, número, bairro">
+        </div>
+
+        <!-- NOVOS CAMPOS: Turno e Horário -->
+        <div class="form-group">
+            <label>Turno da Turma:</label>
+            <div class="radio-group">
+                <label class="radio-label turno-manha">
+                    <input type="radio" name="turno" value="Manhã" required> <span>Manhã</span>
+                </label>
+                <label class="radio-label turno-tarde">
+                    <input type="radio" name="turno" value="Tarde"> <span>Tarde</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Dias da Semana (2x por semana):</label>
+            <div class="radio-group">
+                <label class="radio-label dia">
+                    <input type="radio" name="dias" value="Segunda e Quarta-feira" required>
+                    <span>Segunda e Quarta-feira</span>
+                </label>
+                <label class="radio-label dia">
+                    <input type="radio" name="dias" value="Terça e Quinta-feira">
+                    <span>Terça e Quinta-feira</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="selecao-indicador" id="selecaoIndicador" aria-live="polite">
+            Selecione o turno e os dias da turma
+        </div>
+
+        <div class="form-group">
+            <label for="horario">Horário Pretendido:</label>
+            <select id="horario" required disabled>
+                <option value="">Selecione primeiro o turno e os dias</option>
+            </select>
+            <div class="status-api" id="statusTurma" aria-live="polite"></div>
+        </div>
+
+        <div class="print-only-info">
+            <strong>Dias da Semana:</strong>
+            <span id="diasRelatorio"></span>
+        </div>
+        
+        <div class="btn-group">
+            <button type="submit" id="btnAcao">Salvar e Gerar Comprovante</button>
+        </div>
+    </form>
+
+    <div class="vagas-box">
+        <h3>Vagas disponíveis por turma</h3>
+        <div class="resumo-vagas">
+            <div><strong id="totalOcupadas">0</strong>ocupadas</div>
+            <div><strong id="totalRestantes">144</strong>restantes</div>
+            <div><strong id="totalCapacidade">144</strong>total</div>
+        </div>
+        <div class="lista-vagas" id="listaVagas">
+            Carregando vagas do banco...
+        </div>
+
+        <div class="admin-actions">
+            <a class="admin-link" href="/admin">Abrir gestão e relatórios</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('formInscricao');
+    const btn = document.getElementById('btnAcao');
+    const horario = document.getElementById('horario');
+    const statusTurma = document.getElementById('statusTurma');
+    let turmas = [];
+
+    function normalizarDigitos(valor) {
+        return (valor || '').replace(/\D/g, '');
+    }
+
+    function turmaSelecionada() {
+        const turno = document.querySelector('input[name="turno"]:checked')?.value;
+        const dias = document.querySelector('input[name="dias"]:checked')?.value;
+        const hora = horario.value;
+        return turmas.find(t =>
+            t.turno === turno &&
+            t.dias_semana === dias &&
+            t.hora_inicio === hora
+        );
+    }
+
+    function atualizarSelecao() {
+        const turno = document.querySelector('input[name="turno"]:checked');
+        const dias = document.querySelector('input[name="dias"]:checked');
+        const indicador = document.getElementById('selecaoIndicador');
+
+        if (turno && dias) {
+            indicador.innerHTML = '✓ <strong>Turma selecionada:</strong> ' +
+                turno.value + ' · ' + dias.value;
+        } else if (turno) {
+            indicador.innerHTML = '✓ <strong>Turno:</strong> ' + turno.value +
+                ' · escolha agora os dias da semana';
+        } else if (dias) {
+            indicador.innerHTML = '✓ <strong>Dias:</strong> ' + dias.value +
+                ' · escolha agora o turno';
+        } else {
+            indicador.textContent = 'Selecione o turno e os dias da turma';
+        }
+
+        atualizarHorarios();
+    }
+
+    function atualizarHorarios() {
+        const turno = document.querySelector('input[name="turno"]:checked')?.value;
+        const dias = document.querySelector('input[name="dias"]:checked')?.value;
+
+        horario.innerHTML = '';
+        statusTurma.textContent = '';
+        statusTurma.className = 'status-api';
+
+        if (!turno || !dias) {
+            horario.disabled = true;
+            horario.innerHTML = '<option value="">Selecione primeiro o turno e os dias</option>';
+            return;
+        }
+
+        const candidatas = turmas
+            .filter(t => t.turno === turno && t.dias_semana === dias)
+            .sort((a, b) => a.hora_inicio.localeCompare(b.hora_inicio));
+
+        horario.disabled = false;
+        horario.innerHTML = '<option value="">Escolha um horário</option>';
+
+        candidatas.forEach(t => {
+            const op = document.createElement('option');
+            op.value = t.hora_inicio;
+            op.disabled = t.vagas_restantes <= 0;
+            op.textContent = `${t.hora_inicio} às ${t.hora_fim} — ${
+                t.vagas_restantes <= 0 ? 'LOTADA' : t.vagas_restantes + ' vaga(s) restante(s)'
+            }`;
+            horario.appendChild(op);
+        });
+    }
+
+    function mostrarStatusHorario() {
+        const t = turmaSelecionada();
+        if (!t) {
+            statusTurma.textContent = '';
+            return;
+        }
+        if (t.vagas_restantes <= 0) {
+            statusTurma.textContent = 'Turma lotada. Escolha outro horário.';
+            statusTurma.className = 'status-api erro';
+        } else {
+            statusTurma.textContent =
+                `${t.vagas_ocupadas}/${t.capacidade} ocupadas · ${t.vagas_restantes} vaga(s) restante(s)`;
+            statusTurma.className = 'status-api ok';
+        }
+    }
+
+    function renderizarVagas() {
+        const lista = document.getElementById('listaVagas');
+        const totalCapacidade = turmas.reduce((s, t) => s + t.capacidade, 0);
+        const totalOcupadas = turmas.reduce((s, t) => s + t.vagas_ocupadas, 0);
+        const totalRestantes = turmas.reduce((s, t) => s + t.vagas_restantes, 0);
+
+        document.getElementById('totalCapacidade').textContent = totalCapacidade;
+        document.getElementById('totalOcupadas').textContent = totalOcupadas;
+        document.getElementById('totalRestantes').textContent = totalRestantes;
+
+        lista.innerHTML = '';
+        turmas.forEach(t => {
+            const item = document.createElement('div');
+            item.className = 'vaga-item ' +
+                (t.turno === 'Manhã' ? 'manha' : 'tarde') +
+                (t.vagas_restantes <= 0 ? ' lotada' : '');
+            item.innerHTML = `
+                <div>
+                    <strong>${t.turno} · ${t.hora_inicio}–${t.hora_fim}</strong><br>
+                    ${t.dias_semana}
+                </div>
+                <div class="restantes">
+                    ${t.vagas_restantes <= 0 ? 'LOTADA' : t.vagas_restantes + ' vagas'}
+                </div>
+            `;
+            lista.appendChild(item);
+        });
+    }
+
+    async function carregarTurmas() {
+        try {
+            const resp = await fetch('/api/turmas', { cache: 'no-store' });
+            if (!resp.ok) throw new Error('Não foi possível consultar as turmas.');
+            turmas = await resp.json();
+            renderizarVagas();
+            atualizarHorarios();
+            mostrarStatusHorario();
+        } catch (erro) {
+            document.getElementById('listaVagas').innerHTML =
+                '<div class="status-api erro">Servidor não encontrado. Inicie pelo arquivo INICIAR.bat.</div>';
+        }
+    }
+
+    document.querySelectorAll('input[name="turno"], input[name="dias"]').forEach(input => {
+        input.addEventListener('change', atualizarSelecao);
+    });
+    horario.addEventListener('change', mostrarStatusHorario);
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        const turno = document.querySelector('input[name="turno"]:checked')?.value;
+        const dias = document.querySelector('input[name="dias"]:checked')?.value;
+        const t = turmaSelecionada();
+
+        if (!t) {
+            statusTurma.textContent = 'Selecione uma turma válida.';
+            statusTurma.className = 'status-api erro';
+            return;
+        }
+
+        if (t.vagas_restantes <= 0) {
+            statusTurma.textContent = 'Essa turma está lotada. Escolha outro horário.';
+            statusTurma.className = 'status-api erro';
+            return;
+        }
+
+        document.getElementById('diasRelatorio').textContent = dias;
+
+        const payload = {
+            nome_completo: document.getElementById('nome').value.trim(),
+            rg: normalizarDigitos(document.getElementById('rg').value),
+            cpf: normalizarDigitos(document.getElementById('cpf').value),
+            contato: normalizarDigitos(document.getElementById('contato').value),
+            endereco: document.getElementById('endereco').value.trim(),
+            turno,
+            dias_semana: dias,
+            hora_inicio: horario.value
+        };
+
+        btn.disabled = true;
+        btn.textContent = 'Salvando no banco...';
+
+        try {
+            const resp = await fetch('/api/inscricoes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const resultado = await resp.json();
+
+            if (!resp.ok) {
+                throw new Error(resultado.erro || 'Não foi possível salvar a inscrição.');
+            }
+
+            statusTurma.textContent =
+                `✓ Inscrição salva. Restam ${resultado.vagas_restantes} vaga(s) nessa turma.`;
+            statusTurma.className = 'status-api ok';
+
+            await carregarTurmas();
+
+            btn.textContent = 'Gerando comprovante...';
+            setTimeout(() => window.print(), 180);
+
+        } catch (erro) {
+            statusTurma.textContent = erro.message;
+            statusTurma.className = 'status-api erro';
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Salvar e Gerar Comprovante';
+        }
+    });
+
+    atualizarSelecao();
+    carregarTurmas();
+</script>
+
+</body>
+</html>
