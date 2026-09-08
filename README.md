@@ -14,7 +14,7 @@ Antes de iniciar, você precisa ter instalado no seu computador:
 
 A execução do sistema é totalmente automatizada para sistemas Windows:
 
-1. Baixe e extraia os arquivos deste repositório em uma pasta.
+1. Baixe e extraia os arquivos deste repositório em uma pasta no diretório C do sistema.
 2. Dê um duplo clique no arquivo **`iniciar.bat`**.
 3. O script irá **criar automaticamente as tabelas** necessárias no banco de dados SQLite, iniciar o mini servidor e **abrir a interface direto no seu navegador padrão**.
 
