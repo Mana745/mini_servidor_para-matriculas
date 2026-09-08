@@ -1,5 +1,7 @@
 # Sistema de Inscrições e Cadastros v1.0.0
-
+## Telas do sistema
+![Tela Inicial](foto_1.png)
+![Tela Inicial](foto_2.png)
 Este é um mini servidor web desenvolvido em **Python** com interface em **HTML** e banco de dados **SQLite** para o cadastro e gerenciamento de registros de forma simples e leve. O projeto foi estruturado inicialmente para o controle de **turmas de alunos**, mas possui uma arquitetura flexível que permite sua fácil adaptação para outros nichos, como clínicas e escritórios.
 
 ## 📋 Pré-requisitos
