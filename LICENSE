@@ -1,0 +1,281 @@
+# LICENÇA DE USO NÃO COMERCIAL
+
+**Copyright © 2026 Manasse Ferreira da Silva**
+
+Todos os direitos reservados.
+
+Este software e seu código-fonte são disponibilizados exclusivamente para fins educacionais, acadêmicos, de estudo, pesquisa, avaliação, experimentação e uso pessoal não comercial.
+
+Ao acessar, copiar, modificar, executar, fazer fork, distribuir, hospedar ou de qualquer outra forma utilizar este software, você concorda com os termos desta licença.
+
+---
+
+## 1. DEFINIÇÕES
+
+Para os fins desta licença:
+
+**"Software"** significa o código-fonte, código objeto, arquivos, scripts, documentação, configurações e demais componentes disponibilizados neste repositório.
+
+**"Modificação"** significa qualquer alteração, adaptação, tradução, extensão, correção ou obra derivada baseada, total ou parcialmente, no Software.
+
+**"Uso Comercial"** significa qualquer utilização destinada, direta ou indiretamente, a gerar receita, lucro, vantagem econômica ou benefício comercial para uma pessoa física, empresa, organização ou terceiro.
+
+**"Uso Empresarial ou Corporativo"** significa qualquer utilização do Software por empresas, sociedades, organizações, instituições ou outras entidades no contexto de suas atividades profissionais, operacionais, comerciais ou internas.
+
+**"Serviço"** significa qualquer aplicação, plataforma, sistema, API, SaaS, PaaS, serviço web, serviço em nuvem ou infraestrutura que utilize, incorpore, execute ou disponibilize o Software ou partes dele.
+
+---
+
+## 2. USOS PERMITIDOS
+
+Sem autorização prévia do autor, é permitido:
+
+* Copiar o Software para fins de estudo e aprendizado pessoal;
+* Modificar o Software para fins educacionais, acadêmicos, experimentais ou pessoais;
+* Executar o Software localmente em ambiente privado;
+* Utilizar o Software para pesquisa, testes, avaliação e demonstrações não comerciais;
+* Criar forks para fins pessoais, educacionais ou de pesquisa não comercial;
+* Compartilhar modificações exclusivamente para fins não comerciais;
+* Publicar modificações em repositórios públicos, desde que a publicação não tenha finalidade comercial;
+* Utilizar o Software em trabalhos acadêmicos, projetos de estudo e atividades de aprendizagem não comerciais.
+
+Todos os usos permitidos permanecem sujeitos aos demais termos desta licença.
+
+---
+
+## 3. FORKS E REPOSITÓRIOS DERIVADOS
+
+É permitido criar forks do Software exclusivamente para fins pessoais, educacionais, acadêmicos, de pesquisa ou experimentação não comercial.
+
+Qualquer fork deverá:
+
+1. Manter os avisos de copyright e autoria existentes;
+2. Manter uma cópia desta licença;
+3. Indicar claramente quando o código tiver sido modificado;
+4. Não ser apresentado como projeto oficial ou como produto autorizado pelo autor;
+5. Não conceder a terceiros direitos superiores aos concedidos por esta licença;
+6. Não ser utilizado para criar, operar ou oferecer produtos ou serviços comerciais sem autorização expressa do autor.
+
+A criação de um fork não concede qualquer direito de uso comercial sobre o Software ou suas modificações.
+
+Forks, derivados ou versões modificadas não podem substituir esta licença por outra licença que permita uso comercial, salvo autorização expressa e por escrito do autor.
+
+---
+
+## 4. SAAS, API E SERVIÇOS ONLINE
+
+Sem autorização prévia e expressa do autor, é proibido utilizar o Software, total ou parcialmente, para criar, operar ou disponibilizar:
+
+* Serviços SaaS;
+* APIs públicas ou privadas para terceiros;
+* APIs comerciais;
+* Plataformas web;
+* Serviços em nuvem;
+* Serviços de processamento remoto;
+* Sistemas de acesso por assinatura;
+* Serviços "pay-per-use";
+* Produtos hospedados para terceiros;
+* Serviços gerenciados;
+* Sistemas de acesso remoto;
+* Qualquer outro serviço baseado no Software que seja oferecido como produto ou serviço a terceiros.
+
+Essa restrição se aplica mesmo quando o código-fonte do Software não é diretamente distribuído aos usuários finais.
+
+A execução do Software em um servidor e a disponibilização de suas funcionalidades por meio de uma interface web, API ou outro serviço remoto constitui uso restrito quando realizada para fins empresariais ou comerciais.
+
+---
+
+## 5. HOSPEDAGEM PÚBLICA
+
+É permitido hospedar o Software publicamente exclusivamente para fins educacionais, acadêmicos, demonstrativos, de pesquisa ou experimentação não comercial.
+
+Sem autorização do autor, é proibido hospedar o Software publicamente quando a hospedagem:
+
+* For utilizada para obtenção de receita;
+* Fizer parte de um produto ou serviço comercial;
+* For oferecida como serviço a terceiros;
+* Estiver associada a planos pagos, assinaturas ou publicidade;
+* For utilizada como infraestrutura de uma empresa;
+* For utilizada para fornecer funcionalidades comerciais;
+* Der acesso ao Software ou às suas funcionalidades como parte de uma operação empresarial.
+
+A simples disponibilização pública do código-fonte em um repositório para fins de colaboração e estudo não constitui autorização para uso comercial.
+
+---
+
+## 6. USO POR EMPRESAS E ORGANIZAÇÕES
+
+O uso do Software por empresas, organizações ou outras entidades em atividades internas, operacionais, comerciais ou corporativas não é permitido sem autorização prévia e expressa do autor.
+
+Isso inclui, entre outros:
+
+* Uso em sistemas internos de empresas;
+* Uso em servidores corporativos;
+* Uso em infraestrutura de produção;
+* Integração com sistemas empresariais;
+* Uso em processos internos de uma organização;
+* Uso para atendimento de clientes;
+* Uso em produtos desenvolvidos para terceiros;
+* Uso em serviços prestados profissionalmente;
+* Uso como componente de produtos comerciais;
+* Uso em ambientes de produção empresariais.
+
+O fato de o Software ser gratuito ou de não haver cobrança direta pelo acesso ao Software não significa que o uso empresarial esteja autorizado.
+
+---
+
+## 7. USO COMERCIAL
+
+Sem autorização expressa e por escrito do autor, é proibido:
+
+* Vender o Software ou suas modificações;
+* Licenciar ou sublicenciar o Software para fins comerciais;
+* Incorporar o Software em produtos comerciais;
+* Utilizar o Software para prestação de serviços remunerados;
+* Monetizar funcionalidades baseadas no Software;
+* Utilizar o Software em produtos SaaS comerciais;
+* Oferecer acesso pago ao Software ou às suas funcionalidades;
+* Utilizar o Software para gerar receita direta ou indireta;
+* Utilizar o Software como parte de uma atividade comercial ou empresarial;
+* Utilizar o Software para desenvolver produtos ou serviços destinados à comercialização.
+
+Qualquer uso que tenha como finalidade direta ou indireta a obtenção de vantagem econômica deverá ser previamente autorizado pelo autor.
+
+---
+
+## 8. REDISTRIBUIÇÃO
+
+A redistribuição do Software é permitida exclusivamente para fins não comerciais e desde que:
+
+* Esta licença seja incluída integralmente;
+* Os avisos de copyright sejam preservados;
+* A autoria original seja devidamente indicada;
+* O redistribuidor informe claramente quaisquer modificações realizadas;
+* O Software não seja vendido ou oferecido como parte de um produto ou serviço comercial;
+* Nenhuma licença adicional conceda direitos incompatíveis com esta licença.
+
+É proibido redistribuir o Software sob termos que permitam seu uso comercial sem autorização do autor.
+
+---
+
+## 9. OBRAS DERIVADAS E MODIFICAÇÕES
+
+As modificações realizadas sobre o Software permanecem sujeitas às restrições desta licença quando incorporarem código, estrutura ou componentes protegidos do Software original.
+
+Uma modificação não poderá ser utilizada para contornar as restrições desta licença.
+
+Não é permitido simplesmente modificar, renomear, reorganizar ou alterar a aparência do Software e então distribuí-lo como um novo produto comercial sem autorização do autor.
+
+---
+
+## 10. ATRIBUIÇÃO E AVISOS
+
+Toda cópia, fork, redistribuição ou obra derivada permitida por esta licença deverá preservar:
+
+* O nome do autor original;
+* Os avisos de copyright;
+* Esta licença;
+* Os avisos de terceiros existentes no Software, quando aplicável.
+
+As modificações devem ser identificadas de forma razoável para que não sejam confundidas com a versão original ou oficial.
+
+---
+
+## 11. PROJETO NÃO OFICIAL
+
+Forks, versões modificadas, redistribuições e produtos derivados não poderão utilizar o nome, marca, logotipo ou identidade visual do projeto original de forma que sugira:
+
+* Endosso pelo autor;
+* Associação oficial;
+* Parceria comercial;
+* Patrocínio;
+* Certificação;
+* Autoria das modificações pelo autor original.
+
+O uso de marcas ou identidade visual pertencentes ao autor poderá estar sujeito a regras adicionais.
+
+---
+
+## 12. USOS NÃO AUTORIZADOS
+
+Qualquer uso não expressamente permitido nesta licença é reservado ao autor.
+
+Em caso de dúvida sobre determinado uso, deve-se considerar que o uso não está autorizado até que o autor forneça autorização expressa.
+
+---
+
+## 13. LICENÇA COMERCIAL
+
+O autor poderá, a seu exclusivo critério, conceder licenças comerciais individuais ou corporativas mediante acordo específico.
+
+Uma licença comercial poderá estabelecer condições próprias, incluindo, mas não se limitando a:
+
+* Valor de licenciamento;
+* Número de usuários;
+* Número de instalações;
+* Ambientes autorizados;
+* Uso em produção;
+* Uso em servidores;
+* Uso por empresas;
+* Integração com produtos;
+* Distribuição;
+* Suporte;
+* Atualizações;
+* Prazo da licença.
+
+Para solicitar uma licença comercial, entre em contato:
+
+**Autor:** Manasse Ferreira da Silva
+**E-mail:** [man.fer737@gmail.com](mailto:man.fer737@gmail.com)
+
+---
+
+## 14. PROPRIEDADE INTELECTUAL
+
+Esta licença não transfere a propriedade intelectual do Software.
+
+Todos os direitos não expressamente concedidos permanecem reservados ao autor.
+
+A criação de forks, modificações ou obras derivadas não implica transferência de propriedade intelectual sobre o Software original.
+
+---
+
+## 15. AUSÊNCIA DE GARANTIA
+
+O SOFTWARE É FORNECIDO **"NO ESTADO EM QUE SE ENCONTRA"**, SEM GARANTIAS DE QUALQUER TIPO, EXPRESSAS OU IMPLÍCITAS.
+
+NA MÁXIMA EXTENSÃO PERMITIDA PELA LEGISLAÇÃO APLICÁVEL, O AUTOR NÃO SERÁ RESPONSÁVEL POR QUAISQUER DANOS, PERDAS, INTERRUPÇÕES, FALHAS, PERDA DE DADOS, LUCROS CESSANTES OU OUTROS PREJUÍZOS DECORRENTES DO USO OU DA IMPOSSIBILIDADE DE USO DO SOFTWARE.
+
+---
+
+## 16. VIOLAÇÃO DA LICENÇA
+
+Qualquer utilização do Software em desacordo com esta licença constitui violação dos termos aqui estabelecidos.
+
+Em caso de violação, os direitos concedidos por esta licença serão automaticamente encerrados, sem prejuízo de outros direitos e medidas disponíveis ao autor nos termos da legislação aplicável.
+
+Após o encerramento da licença, o usuário deverá cessar o uso, distribuição e disponibilização do Software, salvo quando houver outro fundamento jurídico que autorize sua utilização.
+
+---
+
+## 17. ALTERAÇÕES DESTA LICENÇA
+
+O autor poderá publicar novas versões desta licença para versões futuras do Software.
+
+A versão da licença aplicável será aquela indicada no repositório ou na distribuição correspondente do Software.
+
+---
+
+## 18. ACEITAÇÃO
+
+Ao copiar, modificar, executar, distribuir, fazer fork, hospedar ou utilizar o Software, você declara que leu, compreendeu e concorda com os termos desta licença.
+
+Caso não concorde com estes termos, você não está autorizado a utilizar, copiar, modificar, distribuir ou disponibilizar o Software, exceto quando outro direito legalmente aplicável permitir expressamente tal utilização.
+
+---
+
+**Copyright © 2026 Manasse Ferreira da Silva — Todos os direitos reservados.**
+
+**Licença:** Uso Não Comercial
+
+**Contato para licenciamento comercial:** [man.fer737@gmail.com](mailto:man.fer737@gmail.com)
