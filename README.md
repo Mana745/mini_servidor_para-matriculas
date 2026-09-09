@@ -49,4 +49,6 @@ O sistema foi feito para ser modular. Se você deseja utilizá-lo para outra fin
 
 ## 📄 Licença
 
-Este projeto é de código aberto e está disponível sob a licença MIT. Sinta-se livre para clonar, modificar e distribuir conforme suas necessidades.
+Este projeto está atualmente em processo de definição de sua licença.
+
+O código está disponível publicamente para estudo e avaliação. Para uso comercial, integração em produtos ou serviços, entre em contato com o autor.
