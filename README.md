@@ -49,6 +49,4 @@ O sistema foi feito para ser modular. Se você deseja utilizá-lo para outra fin
 
 ## 📄 Licença
 
-Este projeto está atualmente em processo de definição de sua licença.
-
-O código está disponível publicamente para estudo e avaliação. Para uso comercial, integração em produtos ou serviços, entre em contato com o autor.
+⚠️ Licença: Este projeto é disponibilizado exclusivamente para uso pessoal, educacional e não comercial. O uso comercial, empresarial, SaaS, API ou integração em produtos/serviços comerciais requer autorização prévia do autor
